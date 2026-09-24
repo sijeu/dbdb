@@ -220,45 +220,44 @@ body {
    DASHBOARD
    ========================= */
 
-body:has(h1) {
-  background: #f5f7fa;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 40px 24px;
-  display: block;
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-body h1 {
-  font-size: 28px;
-  color: #09b9bd;
-  margin: 0 0 12px;
+.container {
+  background: white;
+  padding: 30px;
+  width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-body p {
-  font-size: 15px;
-  color: #555;
-  margin: 0 0 24px;
+h2 {
+  text-align: center;
 }
 
-body button {
-  border: none;
-  border-radius: 30px;
-  background: #09c2c7;
-  color: white;
-  font-weight: bold;
-  padding: 12px 28px;
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
   cursor: pointer;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
-  transition: 0.2s ease;
 }
 
-body button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
-}
-
-body button:active {
-  transform: translateY(0);
+#message {
+  margin-top: 15px;
+  text-align: center;
 }
 
 /* =========================
