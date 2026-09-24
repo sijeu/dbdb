@@ -1,45 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Login</title>
+  <title>Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <main class="card">
-    <h1>Welcome Back</h1>
-    <p class="subtitle">Sign in to your account</p>
 
-    <form id="loginForm">
-      <label>Email</label>
-      <input type="email" id="email" required>
+<body class="login-page">
 
-      <label>Password</label>
-      <input type="password" id="password" required>
+  <div class="login-wrapper">
 
-      <button type="submit">Login</button>
-      <p id="message"></p>
-    </form>
+    <div class="login-card">
 
-    <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+      <div class="logo-circle">
+        <div class="logo-symbol">⌂</div>
+        <span>YOUR LOGO</span>
+      </div>
 
-    <form id="registerForm" class="hidden">
-      <h2>Create Account</h2>
-      <label>Name</label>
-      <input type="text" id="name">
+      <form id="loginForm">
 
-      <label>Email</label>
-      <input type="email" id="regEmail">
+        <div class="input-box">
+          <span class="input-icon">👤</span>
+          <input
+            type="text"
+            id="username"
+            placeholder="USERNAME"
+            required
+          >
+        </div>
 
-      <label>Password</label>
-      <input type="password" id="regPassword">
+        <div class="input-box">
+          <span class="input-icon">🔒</span>
+          <input
+            type="password"
+            id="password"
+            placeholder="PASSWORD"
+            required
+          >
+        </div>
 
-      <button type="submit">Register</button>
-      <p id="registerMessage"></p>
-    </form>
-  </main>
+        <div class="remember-box">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember Me ?</label>
+        </div>
+
+        <button type="submit" class="login-button">
+          LOG IN
+        </button>
+
+        <p id="message"></p>
+
+      </form>
+
+      <p class="register-text">
+        Don't have an account?
+        <a href="#" id="showRegister">REGISTER HERE</a>
+      </p>
+
+    </div>
+
+    <div class="register-card hidden">
+
+      <h2>CREATE ACCOUNT</h2>
+
+      <form id="registerForm">
+
+        <div class="input-box">
+          <span class="input-icon">👤</span>
+          <input
+            type="text"
+            id="registerName"
+            placeholder="NAME"
+            required
+          >
+        </div>
+
+        <div class="input-box">
+          <span class="input-icon">✉</span>
+          <input
+            type="email"
+            id="registerEmail"
+            placeholder="EMAIL"
+            required
+          >
+        </div>
+
+        <div class="input-box">
+          <span class="input-icon">🔒</span>
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="PASSWORD"
+            required
+          >
+        </div>
+
+        <button type="submit" class="login-button">
+          REGISTER
+        </button>
+
+        <p id="registerMessage"></p>
+
+      </form>
+
+      <p class="register-text">
+        Already have an account?
+        <a href="#" id="showLogin">LOGIN HERE</a>
+      </p>
+
+    </div>
+
+  </div>
 
   <script src="app.js"></script>
+
 </body>
+
 </html>
