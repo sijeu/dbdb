@@ -17,15 +17,12 @@ body {
 
 .login-page {
   min-height: 100vh;
-
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
   overflow: hidden;
-
   background: #09b9bd;
-
   position: relative;
 }
 
@@ -34,29 +31,23 @@ body {
 
 .login-page::before {
   content: "";
-
   position: absolute;
-
   width: 130%;
   height: 42%;
-
   left: -15%;
   bottom: -20%;
-
   background: #f5f7fa;
-
   border-radius: 50% 50% 0 0;
+  z-index: 0;
 }
 
 
 /* Login wrapper */
 
-.login-wrapper {
+.login-page .login-wrapper {
   width: 100%;
   max-width: 420px;
-
   padding: 30px 20px;
-
   position: relative;
   z-index: 2;
 }
@@ -64,75 +55,52 @@ body {
 
 /* Login card */
 
-.login-card,
-.register-card {
+.login-page .login-card,
+.login-page .register-card {
   width: 100%;
-
   background: #09c2c7;
-
   padding: 45px 35px 30px;
-
   border-radius: 30px;
-
   position: relative;
-
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
 }
 
 
 /* =========================
-   INPUT FIELDS
+   LOGIN INPUTS
    ========================= */
 
-.input-box {
+.login-page .input-box {
   width: 100%;
   height: 48px;
-
   background: #f7f8fa;
-
   border-radius: 30px;
-
   display: flex;
   align-items: center;
-
   padding: 0 18px;
-
   margin-bottom: 18px;
-
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-
-.input-icon {
+.login-page .input-icon {
   width: 30px;
-
   font-size: 18px;
-
   text-align: center;
-
   opacity: 0.85;
 }
 
-
-.input-box input {
+.login-page .input-box input {
   width: 100%;
-
   border: none;
   outline: none;
-
   background: transparent;
-
   font-size: 15px;
-
   padding: 0 8px;
-
   color: #777;
 }
 
-
-.input-box input::placeholder {
+.login-page .input-box input::placeholder {
   color: #91a5a8;
-
   letter-spacing: 1px;
 }
 
@@ -141,31 +109,23 @@ body {
    REMEMBER ME
    ========================= */
 
-.remember-box {
+.login-page .remember-box {
   display: flex;
   align-items: center;
-
   margin: 8px 0 20px 12px;
-
   color: white;
-
   font-size: 13px;
 }
 
-
-.remember-box input {
+.login-page .remember-box input {
   width: 18px;
   height: 18px;
-
   margin-right: 8px;
-
   accent-color: white;
 }
 
-
-.remember-box label {
+.login-page .remember-box label {
   margin: 0;
-
   cursor: pointer;
 }
 
@@ -174,42 +134,28 @@ body {
    LOGIN BUTTON
    ========================= */
 
-.login-button {
+.login-page .login-button {
   display: block;
-
   width: 140px;
   height: 50px;
-
   margin: 0 auto;
-
   border: none;
-
   border-radius: 30px;
-
   background: white;
-
   color: #0db2b6;
-
   font-size: 18px;
-
   font-weight: bold;
-
   cursor: pointer;
-
   transition: 0.2s ease;
-
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
-
-.login-button:hover {
+.login-page .login-button:hover {
   transform: translateY(-2px);
-
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
 }
 
-
-.login-button:active {
+.login-page .login-button:active {
   transform: translateY(0);
 }
 
@@ -218,67 +164,138 @@ body {
    REGISTER TEXT
    ========================= */
 
-.register-text {
+.login-page .register-text {
   text-align: center;
-
   color: rgba(255, 255, 255, 0.85);
-
   font-size: 11px;
-
   margin: 22px 0 0;
 }
 
-
-.register-text a {
+.login-page .register-text a {
   color: white;
-
   font-weight: bold;
-
   text-decoration: none;
 }
 
-
-.register-text a:hover {
+.login-page .register-text a:hover {
   text-decoration: underline;
 }
 
 
-/* Messages */
+/* =========================
+   MESSAGES
+   ========================= */
 
-#message,
-#registerMessage {
+.login-page #message,
+.login-page #registerMessage {
   min-height: 20px;
-
   text-align: center;
-
   color: white;
-
   font-size: 13px;
 }
 
 
-/* Register */
+/* =========================
+   REGISTER
+   ========================= */
 
-.register-card {
+.login-page .register-card {
   padding-top: 35px;
 }
 
-
-.register-card h2 {
+.login-page .register-card h2 {
   text-align: center;
-
   color: white;
-
   margin: 0 0 25px;
-
   font-size: 22px;
-
   letter-spacing: 1px;
 }
 
-
-.hidden {
+.login-page .hidden {
   display: none;
+}
+
+
+/* =========================
+   DASHBOARD
+   ========================= */
+
+body:has(.dashboard) {
+  background: #fff;
+  align-items: flex-start;
+}
+
+.card.dashboard {
+  width: 100%;
+  max-width: 900px;
+  padding: 32px 24px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.dashboard .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5ea;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.dashboard h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.dashboard #welcome {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.dashboard #logout {
+  width: auto;
+  margin-top: 0;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #f2f2f7;
+  color: #fa233b;
+  font-weight: 600;
+}
+
+.dashboard .image-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  gap: 16px;
+}
+
+.dashboard .image-box {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard .eyebrow {
+  font-size: 12px;
+  color: #8e8e93;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dashboard .title {
+  display: none;
+}
+
+.dashboard .image-box img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -288,29 +305,35 @@ body {
 
 @media (max-width: 700px) {
 
-  .login-wrapper {
+  .login-page .login-wrapper {
     max-width: 390px;
-
     padding: 25px 18px;
   }
 
-  .login-card,
-  .register-card {
+  .login-page .login-card,
+  .login-page .register-card {
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .dashboard .image-container {
+    flex-wrap: wrap;
+  }
+
+  .dashboard .image-box {
+    flex: 1 1 calc(50% - 8px);
   }
 }
 
 
 @media (max-width: 400px) {
 
-  .login-card {
+  .login-page .login-card {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  .input-box {
+  .login-page .input-box {
     height: 45px;
   }
-
 }
