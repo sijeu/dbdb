@@ -3,11 +3,27 @@ const API_URL = "https://charles-8khr.onrender.com";
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");
 const showRegister = document.getElementById("showRegister");
+const showLogin = document.getElementById("showLogin");
+
+const loginCard = document.querySelector(".login-card");
+const registerCard = document.querySelector(".register-card");
+
 
 showRegister.addEventListener("click", (e) => {
   e.preventDefault();
-  registerForm.classList.toggle("hidden");
+
+  loginCard.classList.add("hidden");
+  registerCard.classList.remove("hidden");
 });
+
+
+showLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  registerCard.classList.add("hidden");
+  loginCard.classList.remove("hidden");
+});
+
 
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -19,8 +35,13 @@ loginForm.addEventListener("submit", async (e) => {
   try {
     const response = await fetch(`${API_URL}/api/login`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email,
+        password
+      })
     });
 
     const data = await response.json();
@@ -31,11 +52,14 @@ loginForm.addEventListener("submit", async (e) => {
     }
 
     localStorage.setItem("token", data.token);
+
     window.location.href = "dashboard.html";
+
   } catch (error) {
     message.textContent = "Cannot connect to the server.";
   }
 });
+
 
 registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -48,16 +72,24 @@ registerForm.addEventListener("submit", async (e) => {
   try {
     const response = await fetch(`${API_URL}/api/register`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password })
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password
+      })
     });
 
     const data = await response.json();
+
     message.textContent = data.message;
 
     if (response.ok) {
       registerForm.reset();
     }
+
   } catch (error) {
     message.textContent = "Cannot connect to the server.";
   }
