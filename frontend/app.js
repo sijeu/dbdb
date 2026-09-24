@@ -1,4 +1,4 @@
-const API_URL = "https://dbdb-eight.vercel.app";
+const API_URL = "https://dbdb-dvxx.onrender.com";
 
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");
